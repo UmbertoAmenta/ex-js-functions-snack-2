@@ -9,9 +9,8 @@
  */
 function stampaOgniSecondo(text) {
   const intervalId = setInterval(() => console.log(text), 1000);
+  setTimeout(() => clearInterval(intervalId), 10000);
   return intervalId;
 }
 
-const interval = stampaOgniSecondo("tic-tac il tempo scorre!");
-
-setTimeout(() => clearInterval(interval), 10000);
+stampaOgniSecondo("tic-tac il tempo scorre!");

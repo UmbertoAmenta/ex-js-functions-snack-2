@@ -8,12 +8,13 @@
  */
 function creaContatoreAutomatico(interval) {
   let counter = 0;
-  return setInterval(() => {
+
+  const intervalId = setInterval(() => {
     counter++;
     console.log(counter);
   }, interval);
+  setTimeout(() => clearInterval(intervalId), 60000);
+  return intervalId;
 }
 
-const intervalId = creaContatoreAutomatico(5000);
-
-setTimeout(() => clearInterval(intervalId), 60000);
+creaContatoreAutomatico(3000);
